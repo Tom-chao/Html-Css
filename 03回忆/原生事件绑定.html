@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="show()">click me</button>
+    <script type='text/javascript'>
+        // The first type
+        // const btn = document.getElementById('btn')
+        // btn.onclick = (item,index) => {
+        //     alert(1)
+        // }
+        // The second type
+        // function show(params) {
+        //     alert(1)
+        // }
+        // the third type
+        const but = document.getElementById('btn')
+        but.addEventListener('click',(item,index) => {
+            alert(1)
+        })
+    </script>
+</body>
+</html>

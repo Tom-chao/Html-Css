@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type='text/javascript'>
+        let obj = {a:1,b:2,c:3}
+        let arr = [2,4,6,8,10]
+        //传统写法
+        // const c = obj.c
+        //结构赋值写法
+        // const {c} = obj
+        //数组的解构赋值
+        // const [,,a] = arr
+        let obj2 = {a:1,b:2,c:{x:1,y:2}}
+        //正常解构赋值
+        const {y} = obj2.c
+        // 连续结构赋值
+        // const {c:{y}} = obj2
+
+        // 连续结构赋值 + 重命名
+        const {c:{y:value}} = obj2
+        console.log(value)
+    </script>
+</body>
+</html>

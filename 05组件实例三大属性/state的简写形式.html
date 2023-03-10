@@ -15,27 +15,25 @@
         //定义一个组件（类式）
         class Weather extends React.Component{
             //构造器
-            constructor(props){
-                super(props)
-                this.state = {isHot:false} //初始化状态
-                //给实例自身追加一个同名的changeWeather方法，这个方法是根据原型身上的changeWeather用bind生成的,它的this没问题
-                this.changeWeather = this.changeWeather.bind(this)
-            }
+            // constructor(props){
+            //     super(props)
+            //     this.state = {isHot:false} //初始化状态
+            //     //给实例自身追加一个同名的changeWeather方法，这个方法是根据原型身上的changeWeather用bind生成的,它的this没问题
+            //     this.changeWeather = this.changeWeather.bind(this)
+            // }
+            state = {isHot:false}
             //必须要写的
             render() {
                 console.log(this) //Demo类的实例对象《==》Demo组件实例对象
                 const {isHot} = this.state
                 return <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}</h1>
             }
-            //程序员根据业务需求自己定义的回调
-            changeWeather(){
-                //获取ishot的值
-                //取反赋回去
-                const isHot =  this.state.isHot
+            // 组件类中程序员定义的事件回调，必须写成赋值语句+箭头函数，避免了this为undefind的问题
+            changeWeather = ()=> {
+                const isHot =  this.state.isHot  
                 this.setState({isHot: !isHot})  
             }
         }
-        // 渲染组件到页面
         ReactDOM.render(<Weather/>,document.getElementById('test'))
     </script>
 </body>

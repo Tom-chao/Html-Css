@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type='text/javascript'>
+        let arr = [1,2,3,4,5]
+        let arr2 = [6,7,8]
+        console.log(...arr)//拆包
+        function demo(...params) {
+            console.log(params)
+        }
+        demo(1,2,3)
+        let arr3 = [...arr,...arr2]
+
+        obj = {name:'tom',sex:'man',age:'18'}
+        obj2 = {xingbie:'tom',sn1x:'man',xb:'18'}
+        const cloneObj = {...obj,...obj2} //浅拷贝
+        const cloneObj2 = {...obj,name:'jerry'} //浅拷贝
+        console.log(cloneObj2)
+    </script>
+</body>
+</html>
